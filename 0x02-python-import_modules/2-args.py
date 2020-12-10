@@ -14,4 +14,4 @@ if __name__ == "__main__":
         for i in sys.argv:
             if counter > 0:
                 print("{}: {}".format(counter, i))
-        counter += 1
+            counter += 1

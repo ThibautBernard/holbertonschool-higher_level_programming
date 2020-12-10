@@ -9,7 +9,7 @@ if __name__ == "__main__":
         print("{}: {}".format(nb_arg, sys.argv[1]))
     else:
         counter = 0
-        print("{} arguments: ".format(nb_arg))
+        print("{} arguments:".format(nb_arg))
         for i in sys.argv:
             if counter > 0:
                 print("{}: {}".format(counter, i))

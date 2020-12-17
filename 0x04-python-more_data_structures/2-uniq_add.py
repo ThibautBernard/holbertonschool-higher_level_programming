@@ -3,6 +3,8 @@ def uniq_add(my_list=[]):
     arr = []
     occ = 0
     sum = 0
+    if len(my_list) == 0:
+        return 0
     arr.append(my_list[0])
     for i in my_list:
         occ = 0

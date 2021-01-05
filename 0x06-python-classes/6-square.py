@@ -46,6 +46,8 @@ class Square:
         error = "position must be a tuple of 2 positive integers"
         count = 0
         error_count = 0
+        if (isinstance(value, tuple) is not True):
+            error_count += 1
         if (isinstance(value[0], int) is not True):
             error_count += 1
         if (isinstance(value[1], int) is not True):

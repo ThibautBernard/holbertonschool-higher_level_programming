@@ -13,8 +13,8 @@ class Square:
             value: (int): size of the sqaure
             position: (tuples): int tuple
         """
-        self._size = value
-        self._position = position
+        self.size = value
+        self.position = position
 
     def __str__(self):
         """ invoke print method if print() use on the instance"""
@@ -48,26 +48,14 @@ class Square:
         """ setter of position
         Args: value (tuples): int tuple to check
         """
-        error = "position must be a tuple of 2 positive integers"
-        count = 0
-        error_count = 0
-        for i in value:
-            if (isinstance(i, int) is not True):
-                raise TypeError(error)
-                error_count += 1
-            if (isinstance(i, tuple) is not True):
-                error_count += 1
-                raise TypeError(error)
-            if (i < 0):
-                error_count += 1
-                raise TypeError(error)
-            count += 1
-
-        if count != 2:
-            error_count += 1
-            raise TypeError(error)
-        if error_count == 0:
-            self._position = value
+        if (isinstance(value, tuple)):
+            if (len(value) == 2):
+                if (isinstance(value[0], int)):
+                    if (isinstance(value[1], int)):
+                        if (value[0] >= 0 and value[1] >= 0):
+                            self._position = value
+        else:
+            raise TypeError("position must be a tuple of 2 positive integers")
 
     def area(self):
         """Return area"""

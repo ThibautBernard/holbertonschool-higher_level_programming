@@ -1,9 +1,18 @@
 #!/usr/bin/python3
 class Square:
+    """Square class"""
     def __init__(self, size=0):
+        """Initialize
+        Args:
+            size (int): the size of the square
+        """
         self.set_size(size)
 
     def set_size(self, s):
+        """Setters of size
+        Args:
+            s (int): the size passed to check
+        """
         try:
             if (s < 0):
                 raise ValueError

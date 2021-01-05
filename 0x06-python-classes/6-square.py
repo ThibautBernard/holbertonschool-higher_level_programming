@@ -44,6 +44,7 @@ class Square:
         Args: value (tuples): int tuple to check
         """
         error = "position must be a tuple of 2 positive integers"
+        count = 0
         for i in value:
             if (isinstance(i, int) is not True):
                 raise TypeError(error)
@@ -53,6 +54,10 @@ class Square:
                 raise TypeError(error)
             else:
                 self._position = value
+            count += 1
+
+        if count != 2:
+            raise TypeError(error)
 
     def area(self):
         """Return area"""

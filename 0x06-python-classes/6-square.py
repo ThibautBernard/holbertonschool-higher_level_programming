@@ -47,19 +47,17 @@ class Square:
         count = 0
         error_count = 0
         if (isinstance(value[0], int) is not True):
-            raise TypeError(error)
             error_count += 1
         if (isinstance(value[1], int) is not True):
             error_count += 1
-            raise TypeError(error)
         if (value[0] < 0 or value[1] < 0):
             error_count += 1
-            raise TypeError(error)
-        if len(value) != 2:
+        if len(value) < 2 or len(value) > 2:
             error_count += 1
-            raise TypeError(error)
         if error_count == 0:
             self._position = value
+        else:
+            raise TypeError(error)
 
     def area(self):
         """Return area"""

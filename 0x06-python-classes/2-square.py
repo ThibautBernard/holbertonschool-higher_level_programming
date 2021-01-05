@@ -12,21 +12,9 @@ class Square:
         Args:
             size (int): the size of the square
         """
-        self.set_size(size)
-
-    def set_size(self, s):
-        """Setters of size
-        Args:
-            s (int): the size passed to check
-        """
-        try:
-            if (s < 0):
-                raise ValueError
-            if (isinstance(s, int) is not True):
-                raise TypeError
-            else:
-                self.__size = s
-        except TypeError:
-            print("size must be an integer")
-        except ValueError:
-            print("size must be >= 0")
+        if (isinstance(size, int) is not True):
+            raise TypeError("size must be an integer")
+        if (size < 0):
+            raise ValueError("size must be >= 0")
+        else:
+            self.__size = size

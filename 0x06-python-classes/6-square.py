@@ -50,9 +50,7 @@ class Square:
                 if (isinstance(value[0], int)):
                     if (isinstance(value[1], int)):
                         if (value[0] >= 0 and value[1] >= 0):
-                            no_error += 1
-        if no_error == 1:
-            self._position = value
+                            self._position = value
         else:
             raise TypeError("position must be a tuple of 2 positive integers")
 

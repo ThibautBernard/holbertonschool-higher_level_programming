@@ -1,14 +1,28 @@
 #!/usr/bin/python3
+"""
+Square class - setter and initialize the class
+
+"""
+
+
 class Square:
+    """ Square class """
     def __init__(self, value=0):
+        """ Initialize attributs
+        Args: value (int): size of the square
+        """
         self._size = value
 
     @property
     def size(self):
+        """Getter size"""
         return self._size
 
     @size.setter
     def size(self, value):
+        """Setter size
+        Args: value (int): size to check
+        """
         try:
             if (value < 0):
                 raise ValueError
@@ -22,9 +36,11 @@ class Square:
             print("size must be an integer")
 
     def area(self):
+        """Return the area size"""
         return self._size * self._size
 
     def my_print(self):
+        """Print a square"""
         if (self._size == 0):
             print()
         else:

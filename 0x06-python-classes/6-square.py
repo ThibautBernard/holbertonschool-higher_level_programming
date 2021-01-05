@@ -26,17 +26,12 @@ class Square:
         """setter of size
         Args: value (int): value to check
         """
-        try:
-            if (value < 0):
-                raise ValueError
-            if (isinstance(value, int) is not True):
-                raise TypeError
-            else:
-                self._size = value
-        except ValueError:
-            print("size must be >= 0")
-        except TypeError:
-            print("size must be an integer")
+        if (isinstance(value, int) is not True):
+            raise TypeError("size must be an integer")
+        if (value < 0):
+            raise ValueError("size must be >= 0")
+        else:
+            self._size = value
 
     @property
     def position(self):

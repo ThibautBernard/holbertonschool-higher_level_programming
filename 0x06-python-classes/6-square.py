@@ -43,8 +43,6 @@ class Square:
         """ setter of position
         Args: value (tuples): int tuple to check
         """
-        count = 0
-        no_error = 0
         if (isinstance(value, tuple)):
             if (len(value) == 2):
                 if (isinstance(value[0], int)):

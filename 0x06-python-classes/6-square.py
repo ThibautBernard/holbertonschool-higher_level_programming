@@ -13,13 +13,13 @@ class Square:
             value: (int): size of the sqaure
             position: (tuples): int tuple
         """
-        self._size = value
-        self._position = position
+        self.__size = value
+        self.__position = position
 
     @property
     def size(self):
         """getter of size """
-        return self._size
+        return self.__size
 
     @size.setter
     def size(self, value):
@@ -31,12 +31,12 @@ class Square:
         if (value < 0):
             raise ValueError("size must be >= 0")
         else:
-            self._size = value
+            self.__size = value
 
     @property
     def position(self):
         """ getter of position """
-        return self._position
+        return self.__position
 
     @position.setter
     def position(self, value):
@@ -49,26 +49,26 @@ class Square:
                 if (isinstance(value[0], int)):
                     if (isinstance(value[1], int)):
                         if (value[0] >= 0 and value[1] >= 0):
-                            error += 1
+                            error = 1
         if error == 1:
-            self._position = value
+            self.__position = value
         else:
             raise TypeError("position must be a tuple of 2 positive integers")
 
     def area(self):
         """Return area"""
-        return self._size * self._size
+        return self.__size * self.__size
 
     def my_print(self):
         """print a square """
-        if (self._size == 0):
+        if (self.__size == 0):
             print()
         else:
-            for m in range(self._position[1]):
+            for m in range(self.__position[1]):
                 print()
-            for i in range(0, self._size):
-                for z in range(0, self._position[0]):
+            for i in range(0, self.__size):
+                for z in range(0, self.__position[0]):
                     print(" ", end="")
-                for x in range(0, self._size):
+                for x in range(0, self.__size):
                     print("#", end="")
                 print()

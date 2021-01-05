@@ -45,18 +45,14 @@ class Square:
         """
         error = "position must be a tuple of 2 positive integers"
         count = 0
-        error_count = 0
-        if (isinstance(value, tuple) is not True):
-            error_count += 1
-        if (isinstance(value[0], int) is not True):
-            error_count += 1
-        if (isinstance(value[1], int) is not True):
-            error_count += 1
-        if (value[0] < 0 or value[1] < 0):
-            error_count += 1
-        if len(value) < 2 or len(value) > 2:
-            error_count += 1
-        if error_count == 0:
+        no_error = 0
+        if (isinstance(value, tuple)):
+            if (len(value) == 2):
+                if (isinstance(value[0], int)):
+                    if (isinstance(value[1], int)):
+                        if (value[0] >= 0 and value[1] >= 0):
+                            no_error += 1
+        if no_error == 1:
             self._position = value
         else:
             raise TypeError(error)

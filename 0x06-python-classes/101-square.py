@@ -18,8 +18,19 @@ class Square:
 
     def __str__(self):
         """ invoke print method if print() use on the instance"""
-        self.my_print()
-        return ""
+        str = ""
+        c = 0
+        for m in range(self._position[1]):
+            str += "\n"
+        for i in range(0, self._size):
+            for z in range(0, self._position[0]):
+                str += " "
+            for x in range(0, self._size):
+                str += "#"
+            c += 1
+            if c != self._size:
+                str += "\n"
+        return str
 
     @property
     def size(self):

@@ -26,4 +26,22 @@ TypeError: a must be an integer
 Traceback (most recent call last):
 TypeError: a must be an integer
 
+>>> add_integer(-56, -54)
+-110
+
+>>> add_integer(0)
+98
+
+>>> add_integer(54, 5.5)
+59
+>>> add_integer(5.5, 5.5)
+10
+
+>>> add_integer(float('inf'), 54)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+
+
+
 """

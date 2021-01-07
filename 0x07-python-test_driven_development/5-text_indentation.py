@@ -4,27 +4,25 @@ print_square - print a square
 
 """
 
+
 def text_indentation(text):
-    """ function that print a square from size """
+    """ function that print a square from size
+    Args:
+        text (string): string to indent
+    """
     signal = 0
     if not isinstance(text, str):
         raise TypeError("text must be a string")
     delim = ['?', '.', ':']
-    tmp = []
     st = ""
-    tmp_prev = ""
+    counter = 0
     for i in text:
-        tmp.append(i)
+        st += text[counter]
         for y in delim:
             if i == y:
-                for o in tmp:
-                    o = o.replace(' ', '')
-                    print(o, end="")
-                signal = 1
-                del tmp[:]
-                tmp_prev = i
+                print(st.strip(), end="")
+                st = ""
                 print()
                 print()
-    for ded in tmp:
-        ded = ded.replace(' ', '')
-        print(ded, end="")
+        counter += 1
+    print(st.strip(), end="")

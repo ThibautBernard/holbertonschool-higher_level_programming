@@ -26,6 +26,8 @@ def matrix_divided(matrix, div):
             t = len_prev_row
         count_row = 0
         for y in i:
+            if y == 0:
+                raise ZeroDivisionError("division by zero")
             if not isinstance(y, int) and not isinstance(y, float):
                 raise TypeError(err_msg)
             else:

@@ -1,0 +1,59 @@
+The ``5-text_indentation`` module
+======================
+
+Import:
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Tests:
+
+Integer passed
+>>> text_indentation(84)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+list of int passed
+>>> text_indentation([4545, 56454])
+Traceback (most recent call last):
+TypeError: text must be a string
+
+string with no delim passed
+>>> text_indentation("thibaut")
+thibaut
+
+string with delim passed
+>>> text_indentation("thibaut.x")
+thibaut.
+<BLANKLINE>
+x
+
+string with delim passed
+>>> text_indentation("Lorem ipsum dolor sit amet, consectetur adipiscing elit. \\")
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+<BLANKLINE>
+\
+
+string with one delim passed
+>>> text_indentation("Lorem ipsum dolor sit amet, consectetur adipiscing elit:")
+Lorem ipsum dolor sit amet, consectetur adipiscing elit:
+<BLANKLINE>
+
+string with one letter
+>>> text_indentation("L")
+L
+
+string with delim ?
+>>> text_indentation("L?")
+L?
+<BLANKLINE>
+
+string with delim :
+>>> text_indentation("L:")
+L:
+<BLANKLINE>
+
+
+
+
+
+
+

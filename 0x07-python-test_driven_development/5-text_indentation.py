@@ -8,7 +8,7 @@ print_square - print a square
 def text_indentation(text):
     """ function that print a square from size
     Args:
-        text (string): string to indent
+        text: (string): string to indent
     """
     signal = 0
     if not isinstance(text, str):

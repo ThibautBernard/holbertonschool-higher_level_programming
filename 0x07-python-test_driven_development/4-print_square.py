@@ -6,7 +6,10 @@ print_square - print a square
 
 
 def print_square(size):
-    """ function that print a square from size """
+    """ function that print a square from size
+    Args:
+        size: (int): size of square
+    """
     if not isinstance(size, int):
         raise TypeError("size must be an integer")
     if size < 0:

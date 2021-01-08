@@ -1,42 +1,65 @@
-"""
+The ``0-add_integer`` module
+======================
+Import:
 >>> add_integer = __import__('0-add_integer').add_integer
 
+Tests:
+
+add two integer
 >>> add_integer(2, 2)
 4
+
 >>> add_integer(5, 2)
 7
+
+add one integer and one float
 >>> add_integer(5.2, 2)
 7
+
+add only one integer
 >>> add_integer(10)
 108
+
+add one integer and a string
 >>> add_integer(4, "School")
 Traceback (most recent call last):
 TypeError: b must be an integer
+
+add a float and negative number
 >>> add_integer(5.2, -2)
 3
+
+none passed
 >>> add_integer(None)
 Traceback (most recent call last):
 TypeError: a must be an integer
 
+no integer only string
 >>> add_integer("test", "School")
 Traceback (most recent call last):
 TypeError: a must be an integer
 
+list and a string
 >>> add_integer([0, 12], "School")
 Traceback (most recent call last):
 TypeError: a must be an integer
 
+two negative number
 >>> add_integer(-56, -54)
 -110
 
 >>> add_integer(0)
 98
 
+float and number
 >>> add_integer(54, 5.5)
 59
+
+two float
 >>> add_integer(5.5, 5.5)
 10
 
+float inf
 >>> add_integer(float('inf'), 54)
 Traceback (most recent call last):
 TypeError: a must be an integer

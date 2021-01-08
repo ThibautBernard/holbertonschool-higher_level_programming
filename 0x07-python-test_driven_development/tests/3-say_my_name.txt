@@ -1,40 +1,56 @@
-"""
+The ``4-print_square`` module
+======================
+
+Import:
 >>> say_my_name = __import__('3-say_my_name').say_my_name
 
+
+Tests:
+
+Two string
 >>> say_my_name("John", "Smith")
 My name is John Smith
 
+Only one string
 >>> say_my_name("John")
 My name is John 
 
+Integer passed
 >>> say_my_name(1414, "dz")
 Traceback (most recent call last):
 TypeError: first_name must be a string
 
+No arguments
 >>> say_my_name()
 Traceback (most recent call last):
 TypeError: say_my_name() missing 1 required positional argument: 'first_name'
 
+Integer passed
 >>> say_my_name("dz", 48)
 Traceback (most recent call last):
 TypeError: last_name must be a string
 
+List of string passed
 >>> say_my_name(["dzdz"], "dzd")
 Traceback (most recent call last):
 TypeError: first_name must be a string
 
+None passed
 >>> say_my_name(None, "dzd")
 Traceback (most recent call last):
 TypeError: first_name must be a string
 
+None passed
 >>> say_my_name(None, None)
 Traceback (most recent call last):
 TypeError: first_name must be a string
 
+None passed
 >>> say_my_name(None)
 Traceback (most recent call last):
 TypeError: first_name must be a string
 
+One string passed
 >>> say_my_name("x")
 My name is x 
 
@@ -45,6 +61,4 @@ My name is x
 
 
 
-
-"""
 

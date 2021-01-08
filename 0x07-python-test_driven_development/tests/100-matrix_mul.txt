@@ -1,0 +1,60 @@
+The ``100-matrix_mul`` module
+======================
+
+Import:
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+
+Tests:
+
+Two list of lists of int
+>>> print(matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
+[[7, 10], [15, 22]]
+
+First list of lists with less number
+>>> print(matrix_mul([[1], [3, 4]], [[1, 2], [3, 4]]))
+Traceback (most recent call last):
+TypeError: each row of m_a must be of the same size
+
+First list of lists with less number
+>>> print(matrix_mul([[1, 2], [3]], [[1, 2], [3, 4]]))
+Traceback (most recent call last):
+TypeError: each row of m_a must be of the same size
+
+Second list of lists with less number
+>>> print(matrix_mul([[1, 2], [3, 4]], [[1], [3, 4]]))
+Traceback (most recent call last):
+TypeError: each row of m_b must be of the same size
+
+Second list of lists with less number
+>>> print(matrix_mul([[1, 2], [3, 4]], [[1, 2], [4]]))
+Traceback (most recent call last):
+TypeError: each row of m_b must be of the same size
+
+String in list of list in the first list of lists
+>>> print(matrix_mul([[1, "dzdz"], [3, 4]], [[1, 2], [4, 5]]))
+Traceback (most recent call last):
+TypeError: m_a should contain only integers or floats
+
+String in list of list in the second list of lists
+>>> print(matrix_mul([[1, 5], [3, 4]], [[1, 2], ["dzdz", 5]]))
+Traceback (most recent call last):
+TypeError: m_b should contain only integers or floats
+
+A list passed
+>>> print(matrix_mul([], [[1, 2], [5, 5]]))
+Traceback (most recent call last):
+TypeError: m_a must be a list of lists
+
+A string passed
+>>> print(matrix_mul("dz", [[1, 2], [5, 5]]))
+Traceback (most recent call last):
+TypeError: m_a must be a list
+
+No integer in list of lists
+>>> print(matrix_mul([[]], [[1, 2], [5, 5]]))
+Traceback (most recent call last):
+ValueError: m_a can't be empty
+
+
+

@@ -6,17 +6,24 @@ matrix_divided - div matrix number
 
 
 def matrix_divided(matrix, div):
-    """ function that div number of the matrix """
+    """ function that div number of the matrix
+    Args:
+        matrix: (list of lists): a matrix of integer
+        div: (int, float): number to be divised with
+
+    """
     if not isinstance(div, int) and not isinstance(div, float):
         raise TypeError("div must be a number")
     if div == 0:
         raise ZeroDivisionError("division by zero")
     len_prev_row = 0
+    err_msg = "matrix must be a matrix (list of lists) of integers/floats"
     count_row = 0
     count_height = 0
+    if matrix is None:
+        raise TypeError(err_msg)
     mc = list(map(list, matrix))
     t = 0
-    err_msg = "matrix must be a matrix (list of lists) of integers/floats"
     len_prev_row = len(mc[0])
     for i in mc:
         if count_height > 0:

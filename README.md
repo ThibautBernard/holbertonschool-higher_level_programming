@@ -5,7 +5,6 @@
 * [Import, Modules..](https://github.com/ThibautBernard/holbertonschool-higher_level_programming/tree/main/0x02-python-import_modules)
 * [Data Structures](https://github.com/ThibautBernard/holbertonschool-higher_level_programming/tree/main/0x03-python-data_structures)
 * [More Data Structures](https://github.com/ThibautBernard/holbertonschool-higher_level_programming/tree/main/0x04-python-more_data_structures)
-* [More Data Structures](https://github.com/ThibautBernard/holbertonschool-higher_level_programming/tree/main/0x04-python-more_data_structures)
 * [Exceptions](https://github.com/ThibautBernard/holbertonschool-higher_level_programming/tree/main/0x05-python-exceptions)
 * [Classes](https://github.com/ThibautBernard/holbertonschool-higher_level_programming/tree/main/0x06-python-classes)
 * [TDD](https://github.com/ThibautBernard/holbertonschool-higher_level_programming/tree/main/0x07-python-test_driven_development)

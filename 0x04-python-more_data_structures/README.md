@@ -1,1 +1,4 @@
-# DICTIONNARY
+# More Data structures
+
+* Matrix
+* Dictionnary

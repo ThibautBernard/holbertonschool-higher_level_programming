@@ -37,7 +37,7 @@ class Rectangle:
 
     def __repr__(self):
         """ representation of the object to be copied """
-        return 'Rectangle(%s, %s)' % (self.__width, self.__height)
+        return 'Rectangle(%d, %d)' % (self.__width, self.__height)
 
     def __del__(self):
         """ delete the instance of the object """

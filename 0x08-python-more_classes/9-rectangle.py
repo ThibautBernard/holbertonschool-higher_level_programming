@@ -116,7 +116,9 @@ class Rectangle:
         Args:
             size: (int): size
         """
+        return cls(size, size)
+        """
         new = cls()
         new.__width = size
         new.__height = size
-        return new
+        return new"""

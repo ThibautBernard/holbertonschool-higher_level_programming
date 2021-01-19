@@ -16,7 +16,6 @@ class BaseGeometry:
         """
         if type(name) != str:
             name = "height"
-            raise TypeError("{} must be a string".format(name))
         if type(value) != int:
             raise TypeError("{} must be an integer".format(name))
         if value < 0 or value == 0:

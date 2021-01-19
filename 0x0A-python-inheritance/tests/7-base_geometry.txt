@@ -40,3 +40,8 @@ TypeError: width must be an integer
 
 >>> bg.integer_validator("width", 1)
 
+>>> print(bg.area())
+Traceback (most recent call last):
+Exception: area() is not implemented
+
+

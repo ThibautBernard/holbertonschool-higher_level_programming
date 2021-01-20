@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Program that load, add and save"""
 import sys
 import os.path
 

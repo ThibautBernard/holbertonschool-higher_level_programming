@@ -37,6 +37,28 @@ class TestRectangle(unittest.TestCase):
 
     """
         ****************************
+        Str representation test cases
+        *****************************
+    """
+    def test_str_width_only_width_instance(self):
+        """
+            Test __str__ return with width
+        """
+        t = Rectangle(2, 1)
+        x = "[Rectangle] (1) 0/0 - 2/1"
+        self.assertEqual(x, str(t))
+
+    def test_str_width_id_instance(self):
+        """
+            Test __str__ return with width
+            id = 3
+        """
+        t = Rectangle(2, 1, 0, 0, 3)
+        x = "[Rectangle] (3) 0/0 - 2/1"
+        self.assertEqual(x, str(t))
+
+    """
+        ****************************
         Display rectangle test cases
         *****************************
     """

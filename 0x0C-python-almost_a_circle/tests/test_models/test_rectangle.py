@@ -37,6 +37,43 @@ class TestRectangle(unittest.TestCase):
 
     """
         ****************************
+          Area value test cases
+        *****************************
+    """
+    def test_area_with_width_and_height_instance(self):
+        """
+            Test with one instance
+        """
+        t = Rectangle(2, 5)
+        self.assertEqual(10, t.area())
+
+    def test_area_with_multiple_arg_instance(self):
+        """
+            Test with one instance
+        """
+        t = Rectangle(2, 5, 0, 0, 12)
+        self.assertEqual(10, t.area())
+
+    def test_area_with_negative_instance(self):
+        """
+            Test with one instance
+        """
+        with self.assertRaises(ValueError):
+            t = Rectangle(2, -4, 0, 0, 12)
+
+    def test_area_with_multiple_instance(self):
+        """
+            Test with one instance
+        """
+        t = Rectangle(3, 2)
+        u = Rectangle(2, 10)
+        x = Rectangle(8, 7, 0, 0, 12)
+        self.assertEqual(6, t.area())
+        self.assertEqual(20, u.area())
+        self.assertEqual(56, x.area())
+
+    """
+        ****************************
           Width param tests cases
         *****************************
     """

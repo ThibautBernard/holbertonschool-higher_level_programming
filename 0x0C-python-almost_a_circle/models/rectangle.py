@@ -20,11 +20,14 @@ class Rectangle(Base):
         return (self.__width + self.x) * (self.__height + self.y)
 
     def display(self):
-        """ print rectangle from width and height """
+        """ print rectangle from width and height and x,y """
+        if self.y:
+            print("\n" * self.y, end="")
         for i in range(0, self.height):
-            for y in range(0, self.width):
-                print("#", end="")
-            print()
+            if self.x:
+                print(" " * self.x, end="")
+            print("#" * self.width, end="")
+            print("")
 
     def __str__(self):
         """ return rectangle informations"""

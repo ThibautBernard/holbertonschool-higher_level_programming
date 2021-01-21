@@ -61,6 +61,27 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             t = Rectangle(2, -4, 0, 0, 12)
 
+    def test_area_with_x_instance(self):
+        """
+            Test with one instance
+        """
+        t = Rectangle(2, 5, 2, 0, 12)
+        self.assertEqual(20, t.area())
+
+    def test_area_with_y_instance(self):
+        """
+            Test with one instance
+        """
+        t = Rectangle(2, 5, 0, 0, 12)
+        self.assertEqual(10, t.area())
+
+    def test_area_with_x_y_instance(self):
+        """
+            Test with one instance
+        """
+        t = Rectangle(1, 1, 1, 1, 12)
+        self.assertEqual(4, t.area())
+
     def test_area_with_multiple_instance(self):
         """
             Test with one instance

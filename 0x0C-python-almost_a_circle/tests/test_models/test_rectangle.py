@@ -48,12 +48,12 @@ class TestRectangle(unittest.TestCase):
         r = Rectangle(1, 2)
         self.assertEqual(1, r.width)
 
-    def test_negative_width_getter(self):
+    def test_negative_width_setter(self):
         """
             Test return getter with negative
         """
-        r = Rectangle(-5, 2)
-        self.assertEqual(-5, r.width)
+        with self.assertRaises(ValueError):
+            r = Rectangle(-5, 2)
 
     def test_list_width_setter(self):
         """
@@ -76,13 +76,12 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             r = Rectangle(None, 2)
 
-    def test_assignNumber_width_setter(self):
+    def test_Zero_width_setter(self):
         """
             Test exception with setter other than int
         """
-        r = Rectangle(-5, -7)
-        r.width = 9
-        self.assertEqual(9, r.width)
+        with self.assertRaises(ValueError):
+            r = Rectangle(0, 2)
 
     """
         ****************************
@@ -101,8 +100,8 @@ class TestRectangle(unittest.TestCase):
         """
             Test return getter with negative
         """
-        r = Rectangle(-5, -7)
-        self.assertEqual(-7, r.height)
+        with self.assertRaises(ValueError):
+            r = Rectangle(-5, -7)
 
     def test_list_height_setter(self):
         """
@@ -129,9 +128,16 @@ class TestRectangle(unittest.TestCase):
         """
             Test exception with setter other than int
         """
-        r = Rectangle(-5, -7)
+        r = Rectangle(3, 5)
         r.height = 9
         self.assertEqual(9, r.height)
+
+    def test_Zero_width_setter(self):
+        """
+            Test exception with setter other than int
+        """
+        with self.assertRaises(ValueError):
+            r = Rectangle(2, 0)
 
     """
         ****************************
@@ -150,14 +156,14 @@ class TestRectangle(unittest.TestCase):
         """
             Test return getter with negative
         """
-        r = Rectangle(-5, -7, -4)
-        self.assertEqual(-4, r.x)
+        with self.assertRaises(ValueError):
+            r = Rectangle(7, 4, -1)
 
     def test_default_x_getter(self):
         """
             Test return getter with negative
         """
-        r = Rectangle(-5, -7)
+        r = Rectangle(2, 3)
         self.assertEqual(0, r.x)
 
     def test_list_x_setter(self):
@@ -185,9 +191,17 @@ class TestRectangle(unittest.TestCase):
         """
             Test exception with setter other than int
         """
-        r = Rectangle(-5, -7)
+        r = Rectangle(5, 5)
         r.x = 9
         self.assertEqual(9, r.x)
+
+    def test_Zero_x_setter(self):
+        """
+            Test exception with setter other than int
+        """
+        r = Rectangle(5, 5, 0)
+        self.assertEqual(0, r.x)
+
     """
         ****************************
           Y param tests cases
@@ -205,14 +219,14 @@ class TestRectangle(unittest.TestCase):
         """
             Test return getter with negative
         """
-        r = Rectangle(-5, -7, -4, -5)
-        self.assertEqual(-5, r.y)
+        with self.assertRaises(ValueError):
+            r = Rectangle(3, 4, 5, -5)
 
     def test_default_y_getter(self):
         """
             Test return getter with negative
         """
-        r = Rectangle(-5, -7)
+        r = Rectangle(9, 9)
         self.assertEqual(0, r.y)
 
     def test_list_y_setter(self):
@@ -240,7 +254,7 @@ class TestRectangle(unittest.TestCase):
         """
             Test exception with setter other than int
         """
-        r = Rectangle(-5, -7)
+        r = Rectangle(2, 2)
         r.y = 9
         self.assertEqual(9, r.y)
 
@@ -249,5 +263,12 @@ class TestRectangle(unittest.TestCase):
             Test exception with setter other than int
         """
         with self.assertRaises(TypeError):
-            r = Rectangle(-5, -7)
+            r = Rectangle(3, 3)
             r.y = "tt"
+
+    def test_Zero_y_setter(self):
+        """
+            Test exception with setter other than int
+        """
+        r = Rectangle(5, 5, 5, 0)
+        self.assertEqual(0, r.y)

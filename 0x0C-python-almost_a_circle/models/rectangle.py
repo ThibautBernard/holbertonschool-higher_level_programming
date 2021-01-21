@@ -19,6 +19,13 @@ class Rectangle(Base):
         """ returns the area value of the Rectangle instance """
         return (self.__width + self.x) * (self.__height + self.y)
 
+    def display(self):
+        """ print rectangle from width and height """
+        for i in range(0, self.height):
+            for y in range(0, self.width):
+                print("#", end="")
+            print()
+
     @property
     def width(self):
         """ Getter width attribute """

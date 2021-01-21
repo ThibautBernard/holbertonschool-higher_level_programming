@@ -37,54 +37,73 @@ class TestRectangle(unittest.TestCase):
 
     """
         ****************************
+        Display rectangle test cases
+        *****************************
+    """
+    def test_display_with_Zero_height_instance(self):
+        """
+            Test zero in height param
+        """
+        with self.assertRaises(ValueError):
+            t = Rectangle(2, 0)
+
+    def test_display_with_Zero_width_instance(self):
+        """
+            Test zero in width param
+        """
+        with self.assertRaises(ValueError):
+            t = Rectangle(0, 1)
+
+    """
+        ****************************
           Area value test cases
         *****************************
     """
     def test_area_with_width_and_height_instance(self):
         """
-            Test with one instance
+            Test area with only width/height
         """
         t = Rectangle(2, 5)
         self.assertEqual(10, t.area())
 
     def test_area_with_multiple_arg_instance(self):
         """
-            Test with one instance
+            Test area with all param
         """
         t = Rectangle(2, 5, 0, 0, 12)
         self.assertEqual(10, t.area())
 
     def test_area_with_negative_instance(self):
         """
-            Test with one instance
+            Test area with negative heigth
         """
         with self.assertRaises(ValueError):
             t = Rectangle(2, -4, 0, 0, 12)
 
     def test_area_with_x_instance(self):
         """
-            Test with one instance
+            Test area with x param
         """
         t = Rectangle(2, 5, 2, 0, 12)
         self.assertEqual(20, t.area())
 
     def test_area_with_y_instance(self):
         """
-            Test with one instance
+            Test area with y param
         """
         t = Rectangle(2, 5, 0, 0, 12)
         self.assertEqual(10, t.area())
 
     def test_area_with_x_y_instance(self):
         """
-            Test with one instance
+            Test are with x and y param
         """
         t = Rectangle(1, 1, 1, 1, 12)
         self.assertEqual(4, t.area())
 
     def test_area_with_multiple_instance(self):
         """
-            Test with one instance
+            Test area with multiple instance
         """
         t = Rectangle(3, 2)
         u = Rectangle(2, 10)

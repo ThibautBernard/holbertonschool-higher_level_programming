@@ -4,6 +4,7 @@ Class test of class Base
 """
 import unittest
 from models.base import Base
+from models.rectangle import Rectangle
 
 
 class TestBase(unittest.TestCase):
@@ -57,3 +58,35 @@ class TestBase(unittest.TestCase):
         self.assertEqual(10, x.id)
         self.assertEqual(5, z.id)
         self.assertEqual(3, p.id)
+
+    def test_to_json_string_string_return_instance(self):
+        """
+            Test json to string return
+        """
+        r = Rectangle(10, 7, 2, 8)
+        d = r.to_dictionary()
+        json = Base.to_json_string(d)
+        self.assertTrue(type(json) is str)
+
+    def test_to_json_string_None_return_instance(self):
+        """
+            Test json to string with None return
+        """
+        r = Rectangle(10, 7, 2, 8)
+        d = r.to_dictionary()
+        json = Base.to_json_string(None)
+        self.assertEqual("[]", json)
+
+    def test_to_json_string_Empty_return_instance(self):
+        """
+            Test json to string with empty dict return
+        """
+        json = Base.to_json_string({})
+        self.assertEqual("[]", json)
+
+    def test_to_json_string_OtherType_return_instance(self):
+        """
+            Test json to string with string
+        """
+        json = Base.to_json_string("dd")
+        self.assertEqual(None, json)

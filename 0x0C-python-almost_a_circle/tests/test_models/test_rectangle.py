@@ -37,9 +37,215 @@ class TestRectangle(unittest.TestCase):
 
     """
         ****************************
+             .Update  test cases
+        *****************************
+    """
+    def test_update_id_args_instance(self):
+        """
+            Test update method with
+            id
+        """
+        t = Rectangle(1, 1)
+        t.update(25)
+        x = "[Rectangle] (25) 0/0 - 1/1"
+        self.assertEqual(x, str(t))
+
+    def test_update_width_args_instance(self):
+        """
+            Test update method with
+            width
+        """
+        t = Rectangle(1, 1)
+        t.update(1, 8)
+        x = "[Rectangle] (1) 0/0 - 8/1"
+        self.assertEqual(x, str(t))
+
+    def test_update_height_args_instance(self):
+        """
+            Test update method with
+            height
+        """
+        t = Rectangle(1, 1)
+        t.update(1, 1, 15)
+        x = "[Rectangle] (1) 0/0 - 1/15"
+        self.assertEqual(x, str(t))
+
+    def test_update_x_args_instance(self):
+        """
+            Test update method with
+            x
+        """
+        t = Rectangle(1, 1)
+        t.update(1, 1, 1, 15)
+        x = "[Rectangle] (1) 15/0 - 1/1"
+        self.assertEqual(x, str(t))
+
+    def test_update_y_args_instance(self):
+        """
+            Test update method with
+            y
+        """
+        t = Rectangle(1, 1)
+        t.update(1, 1, 1, 1, 15)
+        x = "[Rectangle] (1) 1/15 - 1/1"
+        self.assertEqual(x, str(t))
+
+    def test_update_more_than_5_args_instance(self):
+        """
+            Test update method with
+            y
+        """
+        t = Rectangle(1, 1)
+        t.update(1, 1, 1, 1, 1, 6, 84)
+        x = "[Rectangle] (1) 1/1 - 1/1"
+        self.assertEqual(x, str(t))
+
+    def test_update_string_args_instance(self):
+        """
+            Test update method with
+            string
+        """
+        with self.assertRaises(TypeError):
+            t = Rectangle(1, 1)
+            t.update(5, "dzdz", 1, 1, 1)
+
+    def test_update_negative_args_instance(self):
+        """
+            Test update method with
+            negative
+        """
+        with self.assertRaises(ValueError):
+            t = Rectangle(1, 1)
+            t.update(5, 1, -4, 1, 1)
+
+    def test_update_list_args_instance(self):
+        """
+            Test update method with
+            list
+        """
+        with self.assertRaises(TypeError):
+            t = Rectangle(1, 1)
+            t.update(5, ['1'])
+
+    def test_update_width_error_msg_args_instance(self):
+        """
+            Test update method with
+            list
+        """
+        x = "width must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Rectangle(1, 1)
+            t.update(5, ['1'])
+        self.assertEqual(x, str(cm.exception))
+
+    def test_update_y_error_msg_args_instance(self):
+        """
+            Test update method with
+            string
+        """
+        y = "y must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Rectangle(1, 1)
+            t.update(5, 6, 7, 2, "str")
+        self.assertEqual(y, str(cm.exception))
+
+    def test_update_y_error_msg_args_instance(self):
+        """
+            Test update method with
+            value negative
+        """
+        y = "y must be >= 0"
+        with self.assertRaises(ValueError) as cm:
+            t = Rectangle(1, 1)
+            t.update(5, 6, 7, 2, -5)
+        self.assertEqual(y, str(cm.exception))
+
+    def test_update_width_error_msg_args_instance(self):
+        """
+            Test update method with
+            value negative
+        """
+        w = "width must be > 0"
+        with self.assertRaises(ValueError) as cm:
+            t = Rectangle(1, 1)
+            t.update(5, 0)
+        self.assertEqual(w, str(cm.exception))
+
+    def test_update_width_kwargs_instance(self):
+        """
+            Test update method with
+            kwargs width
+        """
+        t = Rectangle(1, 1)
+        t.update(width=5)
+        x = "[Rectangle] (1) 0/0 - 5/1"
+        self.assertEqual(x, str(t))
+
+    def test_update_y_kwargs_instance(self):
+        """
+            Test update method with
+            kwargs y
+        """
+        t = Rectangle(1, 1)
+        t.update(y=5)
+        x = "[Rectangle] (1) 0/5 - 1/1"
+        self.assertEqual(x, str(t))
+
+    def test_update_multiple_kwargs_instance(self):
+        """
+            Test update method with
+            kwargs multiple
+        """
+        t = Rectangle(1, 1)
+        t.update(y=5, width=12, x=9)
+        x = "[Rectangle] (1) 9/5 - 12/1"
+        self.assertEqual(x, str(t))
+
+    def test_update_args_and_kwargs_instance(self):
+        """
+            Test update method with
+            kwargs width
+        """
+        t = Rectangle(1, 1)
+        t.update(2, y=5, width=12, x=9)
+        x = "[Rectangle] (2) 0/0 - 1/1"
+        self.assertEqual(x, str(t))
+
+    def test_update_kwargs_error_msg_string_instance(self):
+        """
+            Test update kwargs error msg with string
+        """
+        w = "width must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Rectangle(1, 1)
+            t.update(width="54")
+        self.assertEqual(w, str(cm.exception))
+
+    def test_update_kwargs_error_msg_Zero_instance(self):
+        """
+            Test update kwargs error msg with 0
+        """
+        w = "width must be > 0"
+        with self.assertRaises(ValueError) as cm:
+            t = Rectangle(1, 1)
+            t.update(width=0)
+        self.assertEqual(w, str(cm.exception))
+
+    def test_update_kwargs_more_arguments_instance(self):
+        """
+            Test update kwargs more arguments than exist
+        """
+        t = Rectangle(1, 1)
+        t.update(width=3, height=3, y=2, x=2, id=90, z=5)
+        x = "[Rectangle] (90) 2/2 - 3/3"
+        self.assertEqual(x, str(t))
+
+    """
+        ****************************
         Str representation test cases
         *****************************
     """
+
     def test_str_width_only_width_instance(self):
         """
             Test __str__ return with width

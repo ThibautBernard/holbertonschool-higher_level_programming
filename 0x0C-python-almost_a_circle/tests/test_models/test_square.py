@@ -38,6 +38,109 @@ class TestSquare(unittest.TestCase):
 
     """
         ****************************
+             .Update  test cases
+        *****************************
+    """
+    def test_update_id_args_instance(self):
+        """
+            Test update method with
+            id
+        """
+        t = Square(1, 1)
+        t.update(25)
+        x = "[Square] (25) 1/0 - 1"
+        self.assertEqual(x, str(t))
+
+    def test_update_size_args_instance(self):
+        """
+            Test update method with
+            size
+        """
+        t = Square(1, 1)
+        t.update(1, 8)
+        x = "[Square] (1) 1/0 - 8"
+        self.assertEqual(x, str(t))
+
+    def test_update_x_args_instance(self):
+        """
+            Test update method with x
+        """
+        t = Square(1, 1)
+        t.update(1, 1, 7)
+        x = "[Square] (1) 7/0 - 1"
+        self.assertEqual(x, str(t))
+
+    def test_update_string_exception_instance(self):
+        """
+            Test exception update size by a string
+        """
+        with self.assertRaises(TypeError):
+            t = Square(2, 1)
+            t.update(5, "5454")
+
+    def test_update_negative_exception_instance(self):
+        """
+            Test exception update size by a negative
+        """
+        with self.assertRaises(ValueError):
+            t = Square(2, 1)
+            t.update(5, -5)
+
+    def test_update_Zero_exception_instance(self):
+        """
+            Test exception update size by a Zero
+        """
+        with self.assertRaises(ValueError):
+            t = Square(2, 1)
+            t.update(5, 0)
+
+    def test_update_id_kwargs_instance(self):
+        """
+            Test update kwargs method with id
+        """
+        t = Square(1, 1)
+        t.update(id=80)
+        x = "[Square] (80) 1/0 - 1"
+        self.assertEqual(x, str(t))
+
+    def test_update_multiple_kwargs_instance(self):
+        """
+            Test update kwargs method with multiple
+        """
+        t = Square(1, 1)
+        t.update(id=80, size=5, y=3)
+        x = "[Square] (80) 1/3 - 5"
+        self.assertEqual(x, str(t))
+
+    def test_update_negative_kwargs_instance(self):
+        """
+            Test update kwargs method with negative
+        """
+        with self.assertRaises(ValueError):
+            t = Square(1, 1)
+            t.update(id=80, size=-1, y=3)
+            x = "[Square] (80) 1/3 - 5"
+
+    def test_update_args_and_kwargs_instance(self):
+        """
+            Test update kwargs method with args and kwargs
+        """
+        t = Square(1, 1)
+        t.update(5, id=80)
+        x = "[Square] (5) 1/0 - 1"
+        self.assertEqual(x, str(t))
+
+    def test_update_None_kwargs_instance(self):
+        """
+            Test update kwargs method with None
+        """
+        with self.assertRaises(TypeError):
+            t = Square(1, 1)
+            t.update(size=None, y=3)
+            x = "[Square] (80) 1/3 - 5"
+
+    """
+        ****************************
         Size attribut assign & setter test cases
         *****************************
     """

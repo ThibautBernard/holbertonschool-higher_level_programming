@@ -37,6 +37,19 @@ class TestRectangle(unittest.TestCase):
 
     """
         ****************************
+             to_dictionnary()  test cases
+        *****************************
+    """
+    def test_dictionnary_instance(self):
+        """
+            Test dictionnary
+        """
+        t = Rectangle(5, 7)
+        x = "{'x': 0, 'id': 1, 'width': 5, 'height': 7, 'y': 0}"
+        self.assertTrue(type(t.to_dictionary()) is dict)
+
+    """
+        ****************************
              .Update  test cases
         *****************************
     """

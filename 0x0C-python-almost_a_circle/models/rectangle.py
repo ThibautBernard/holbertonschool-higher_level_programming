@@ -15,10 +15,21 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
+    def to_dictionary(self):
+        """ return the representation of a rectangle with attributs"""
+        attrs_to_find = ["width", "height", "x", "y", "id"]
+        dict_att = {}
+        attributes = [atrb for atrb in dir(self) if not atrb == "__"]
+        for i in attributes:
+            if i in attrs_to_find:
+                dict_att[i] = getattr(self, i)
+        return dict_att
+
     def integer_validator(self, name_attr, value):
         """Check value """
+        attr1 = ["width", "height", "size"]
         if type(value) == int:
-            if name_attr == "width" or name_attr == "height":
+            if name_attr in attr1:
                 if value > 0:
                     return 1
                 else:

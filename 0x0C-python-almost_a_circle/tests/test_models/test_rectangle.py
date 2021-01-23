@@ -63,6 +63,16 @@ class TestRectangle(unittest.TestCase):
         x = "[Rectangle] (25) 0/0 - 1/1"
         self.assertEqual(x, str(t))
 
+    def test_update_ID_None_args_instance(self):
+        """
+            Test update method with
+            id
+        """
+        t = Rectangle(1, 1)
+        t.update(None)
+        x = "[Rectangle] (2) 0/0 - 1/1"
+        self.assertEqual(x, str(t))
+
     def test_update_width_args_instance(self):
         """
             Test update method with

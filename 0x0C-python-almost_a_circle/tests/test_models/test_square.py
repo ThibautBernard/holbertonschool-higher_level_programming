@@ -141,6 +141,18 @@ class TestSquare(unittest.TestCase):
 
     """
         ****************************
+             to_dictionnary()  test cases
+        *****************************
+    """
+    def test_dictionnary_instance(self):
+        """
+            Test dictionnary
+        """
+        t = Square(5, 7)
+        self.assertTrue(type(t.to_dictionary()) is dict)
+
+    """
+        ****************************
         Size attribut assign & setter test cases
         *****************************
     """

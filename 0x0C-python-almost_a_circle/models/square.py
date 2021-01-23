@@ -12,22 +12,44 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
         self.size = size
 
+    def to_dictionary(self):
+        """ return the representation of a rectangle with attributs"""
+        attrs_to_find = ["id", "size", "x", "y"]
+        dict_att = {}
+        attributes = [atrb for atrb in dir(self) if not atrb == "__"]
+        for i in attributes:
+            if i in attrs_to_find:
+                dict_att[i] = getattr(self, i)
+        return dict_att
+
     def update(self, *args, **kwargs):
         """ Update attributes """
         attrib = ['id', 'size', 'x', 'y']
         order = [0, 1, 2, 3]
         if args:
             for i in range(len(args)):
-                if i > 4:
+                if i > 3:
                     break
                 tmp = order.index(i)
                 t = attrib[tmp]
-                if self.integer_validator(t, args[i]) or t == "id":
+                if t is not "id":
                     setattr(self, t, args[i])
+                elif t is "id":
+                    if args[i] is None:
+                        Base._Base__nb_objects += 1
+                        self.id = Base._Base__nb_objects
+                    else:
+                        setattr(self, t, args[i])
         else:
             for key, value in kwargs.items():
-                if self.integer_validator(key, value) or key == "id":
+                if key is not "id":
                     setattr(self, key, value)
+                elif key is "id":
+                    if value is None:
+                        Base._Base__nb_objects += 1
+                        self.id = Base._Base__nb_objects
+                    else:
+                        setattr(self, key, value)
 
     def __str__(self):
         """ Representation of the square """

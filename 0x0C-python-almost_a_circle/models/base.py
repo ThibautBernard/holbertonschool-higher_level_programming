@@ -30,11 +30,13 @@ class Base:
             with open("Base.json", "a") as file:
                     file.write("[]")
         else:
+            a = []
             for i in list_objs:
-                with open("{}.json".format(type(i).__name__), "a") as file:
-                    dic = i.to_dictionary()
-                    s = Base.to_json_string(dic)
-                    file.write(s + "\n")
+                a.append(i.to_dictionary())
+
+            with open("{}.json".format(type(i).__name__), "a") as file:
+                s = Base.to_json_string(a)
+                file.write(s + "\n")
 
     @staticmethod
     def to_json_string(list_dictionaries):
@@ -42,8 +44,7 @@ class Base:
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         else:
-            if type(list_dictionaries) is list\
-                                            or type(list_dictionaries) is dict:
+            if type(list_dictionaries) is list:
                 return json.dumps(list_dictionaries)
 
     @staticmethod
@@ -71,9 +72,13 @@ class Base:
         if path.exists("{}.json".format(cls.__name__)):
             with open("{}.json".format(cls.__name__), "r") as f:
                 for i in f:
-                    data = cls.from_json_string(i)
-                    instance = cls.create(**data)
-                    list_instance.append(instance)
+                    count = 0
+                    list_object_length = len(cls.from_json_string(i))
+                    for x in range(0, list_object_length):
+                        data = cls.from_json_string(i)[count]
+                        instance = cls.create(**data)
+                        list_instance.append(instance)
+                        count += 1
             return list_instance
         else:
             return []

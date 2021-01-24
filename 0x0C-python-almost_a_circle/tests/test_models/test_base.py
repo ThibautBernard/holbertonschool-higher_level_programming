@@ -99,7 +99,6 @@ class TestBase(unittest.TestCase):
         i = Base()
         self.assertEqual(8, i.id)
 
-
         """
             ****************
              TO_JSON_STRING
@@ -112,7 +111,7 @@ class TestBase(unittest.TestCase):
         """
         r = Rectangle(10, 7, 2, 8)
         d = r.to_dictionary()
-        json = Base.to_json_string(d)
+        json = Base.to_json_string([d])
         self.assertTrue(type(json) is str)
 
     def test_to_json_string_None_return_instance(self):

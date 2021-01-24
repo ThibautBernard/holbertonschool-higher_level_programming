@@ -73,6 +73,33 @@ class TestBase(unittest.TestCase):
         self.assertEqual(5, z.id)
         self.assertEqual(3, p.id)
 
+    def test_arg_mul_nb_object_instance(self):
+        """
+            Test multiple instance with arg
+        """
+        x = Base(10)
+        z = Base()
+        p = Base(3)
+        self.assertEqual(10, x.id)
+        self.assertEqual(1, z.id)
+        self.assertEqual(3, p.id)
+
+    def test_arg_multiple_instance(self):
+        """
+            Test multiple instance with arg
+        """
+        a = Base()
+        b = Base()
+        c = Base()
+        d = Base(6)
+        e = Base()
+        f = Base()
+        g = Base()
+        h = Base()
+        i = Base()
+        self.assertEqual(8, i.id)
+
+
         """
             ****************
              TO_JSON_STRING

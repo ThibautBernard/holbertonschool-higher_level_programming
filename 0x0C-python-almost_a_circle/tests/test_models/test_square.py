@@ -20,6 +20,145 @@ class TestSquare(unittest.TestCase):
           Instance object counter tests cases
         *****************************
     """
+    def test_instance_Width_Value_Zero_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "width must be > 0"
+        with self.assertRaises(ValueError) as cm:
+            t = Square(0, 2)
+        self.assertEqual(w, str(cm.exception))
+
+    def test_instance_Width_Value_Negative_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "width must be > 0"
+        with self.assertRaises(ValueError) as cm:
+            t = Square(-1, 2)
+        self.assertEqual(w, str(cm.exception))
+
+    def test_instance_Size_Value_Tuple_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "width must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Square((5, 2), 2)
+        self.assertEqual(w, str(cm.exception))
+
+    def test_instance_Size_Value_List_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "width must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Square([5, 2], 2)
+        self.assertEqual(w, str(cm.exception))
+
+    def test_instance_Size_Value_String_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "width must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Square("44zd", 2)
+        self.assertEqual(w, str(cm.exception))
+
+    def test_instance_Size_Value_Float_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "width must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Square(2.5, 2)
+        self.assertEqual(w, str(cm.exception))
+
+    def test_instance_Size_Value_Boolean_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "width must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Square(True, 2)
+        self.assertEqual(w, str(cm.exception))
+
+    def test_instance_Size_Value_None_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "width must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Square(None, 2)
+        self.assertEqual(w, str(cm.exception))
+
+    """
+        **** X error message
+    """
+
+    def test_instance_X_Value_Negative_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "x must be >= 0"
+        with self.assertRaises(ValueError) as cm:
+            t = Square(5, -1)
+        self.assertEqual(w, str(cm.exception))
+
+    def test_instance_X_Value_Tuple_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "x must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Square(5, (2, 3))
+        self.assertEqual(w, str(cm.exception))
+
+    def test_instance_x_Value_List_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "x must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Square(2, [5, 2])
+        self.assertEqual(w, str(cm.exception))
+
+    def test_instance_x_Value_String_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "x must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Square(3, "44zd")
+        self.assertEqual(w, str(cm.exception))
+
+    def test_instance_x_Value_Float_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "x must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Square(2, 2.5)
+        self.assertEqual(w, str(cm.exception))
+
+    def test_instance_x_Value_Boolean_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "x must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Square(2, True)
+        self.assertEqual(w, str(cm.exception))
+
+    def test_instance_x_Value_None_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "x must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Square(2, None)
+        self.assertEqual(w, str(cm.exception))
+
     def test_counter_one_instance(self):
         """
             Test with one instance

@@ -15,6 +15,236 @@ class TestRectangle(unittest.TestCase):
         Base._Base__nb_objects = 0
 
     """
+        *********************************
+         Instance value error msg check
+        **********************************
+    """
+    """
+           ***** Width param ****
+    """
+    def test_instance_Width_Value_Zero_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "width must be > 0"
+        with self.assertRaises(ValueError) as cm:
+            t = Rectangle(0, 2)
+        self.assertEqual(w, str(cm.exception))
+
+    def test_instance_Width_Value_negative_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "width must be > 0"
+        with self.assertRaises(ValueError) as cm:
+            t = Rectangle(-5, 2)
+        self.assertEqual(w, str(cm.exception))
+
+    def test_instance_Width_type_tuple_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "width must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Rectangle((0, 1), 2)
+        self.assertEqual(w, str(cm.exception))
+
+    def test_instance_Width_type_string_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "width must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Rectangle("str", 2)
+        self.assertEqual(w, str(cm.exception))
+
+    def test_instance_Width_type_bool_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "width must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Rectangle(True, 2)
+        self.assertEqual(w, str(cm.exception))
+
+    def test_instance_Width_type_float_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "width must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Rectangle(3.4, 2)
+        self.assertEqual(w, str(cm.exception))
+
+    def test_instance_Width_type_list_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "width must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Rectangle([4, 5], 2)
+        self.assertEqual(w, str(cm.exception))
+
+    def test_instance_Width_type_None_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "width must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Rectangle(None, 2)
+        self.assertEqual(w, str(cm.exception))
+    """
+        *** height param ***
+    """
+    def test_instance_Height_Value_Zero_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "height must be > 0"
+        with self.assertRaises(ValueError) as cm:
+            t = Rectangle(2, 0)
+        self.assertEqual(w, str(cm.exception))
+
+    def test_instance_Height_Value_negative_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "height must be > 0"
+        with self.assertRaises(ValueError) as cm:
+            t = Rectangle(5, -1)
+        self.assertEqual(w, str(cm.exception))
+
+    def test_instance_height_type_tuple_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "height must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Rectangle(3, (0, 1))
+        self.assertEqual(w, str(cm.exception))
+
+    def test_instance_height_type_string_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "height must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Rectangle(2, "str")
+        self.assertEqual(w, str(cm.exception))
+
+    def test_instance_Height_type_bool_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "height must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Rectangle(2, True)
+        self.assertEqual(w, str(cm.exception))
+
+    def test_instance_Height_type_float_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "height must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Rectangle(2, 3.4)
+        self.assertEqual(w, str(cm.exception))
+
+    def test_instance_Height_type_list_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "height must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Rectangle(2, [4, 5])
+        self.assertEqual(w, str(cm.exception))
+
+    def test_instance_Height_type_None_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "height must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Rectangle(2, None)
+        self.assertEqual(w, str(cm.exception))
+
+    """
+           ***** x param ****
+    """
+
+    def test_instance_x_Value_Negative_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "x must be >= 0"
+        with self.assertRaises(ValueError) as cm:
+            t = Rectangle(2, 2, -1)
+        self.assertEqual(w, str(cm.exception))
+
+    def test_instance_x_type_tuple_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "x must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Rectangle(3, 5, (0, 1))
+        self.assertEqual(w, str(cm.exception))
+
+    def test_instance_x_type_string_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "x must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Rectangle(2, 5, "str")
+        self.assertEqual(w, str(cm.exception))
+
+    def test_instance_x_type_bool_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "x must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Rectangle(2, 7, True)
+        self.assertEqual(w, str(cm.exception))
+
+    def test_instance_x_type_float_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "x must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Rectangle(2, 7, 3.4)
+        self.assertEqual(w, str(cm.exception))
+
+    def test_instance_x_type_list_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "x must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Rectangle(2, 5, [4, 5])
+        self.assertEqual(w, str(cm.exception))
+
+    def test_instance_x_type_None_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "x must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Rectangle(2, 7, None)
+        self.assertEqual(w, str(cm.exception))
+
+    def test_instance_y_Value_Negative_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "y must be >= 0"
+        with self.assertRaises(ValueError) as cm:
+            t = Rectangle(2, 2, 5, -1)
+        self.assertEqual(w, str(cm.exception))
+
+    """
         ****************************
           Instance object counter tests cases
         *****************************
@@ -150,6 +380,46 @@ class TestRectangle(unittest.TestCase):
             t = Rectangle(1, 1)
             t.update(5, ['1'])
 
+    def test_update_width_Zero_error_msg_args_instance(self):
+        """
+            Test update method
+        """
+        x = "width must be > 0"
+        with self.assertRaises(ValueError) as cm:
+            t = Rectangle(1, 1)
+            t.update(5, 0)
+        self.assertEqual(x, str(cm.exception))
+
+    def test_update_width_Negative_error_msg_args_instance(self):
+        """
+            Test update method
+        """
+        x = "width must be > 0"
+        with self.assertRaises(ValueError) as cm:
+            t = Rectangle(1, 1)
+            t.update(5, -1)
+        self.assertEqual(x, str(cm.exception))
+
+    def test_update_width_X_error_msg_args_instance(self):
+        """
+            Test update method
+        """
+        x = "x must be >= 0"
+        with self.assertRaises(ValueError) as cm:
+            t = Rectangle(1, 1)
+            t.update(5, 2, 2, -1)
+        self.assertEqual(x, str(cm.exception))
+
+    def test_update_width_Negative_error_msg_args_instance(self):
+        """
+            Test update method
+        """
+        x = "width must be > 0"
+        with self.assertRaises(ValueError) as cm:
+            t = Rectangle(1, 1)
+            t.update(5, -1)
+        self.assertEqual(x, str(cm.exception))
+
     def test_update_width_error_msg_args_instance(self):
         """
             Test update method with
@@ -159,6 +429,94 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError) as cm:
             t = Rectangle(1, 1)
             t.update(5, ['1'])
+        self.assertEqual(x, str(cm.exception))
+
+    def test_update_width_boolean_error_msg_args_instance(self):
+        """
+            Test update method with
+            list
+        """
+        x = "width must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Rectangle(1, 1)
+            t.update(5, True)
+        self.assertEqual(x, str(cm.exception))
+
+    def test_update_width_tuple_error_msg_args_instance(self):
+        """
+            Test update method with
+            list
+        """
+        x = "width must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Rectangle(1, 1)
+            t.update(5, (5, 4))
+        self.assertEqual(x, str(cm.exception))
+
+    def test_update_width_float_error_msg_args_instance(self):
+        """
+            Test update method with
+            list
+        """
+        x = "width must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Rectangle(1, 1)
+            t.update(5, 6.5)
+        self.assertEqual(x, str(cm.exception))
+
+    def test_update_width_None_error_msg_args_instance(self):
+        """
+            Test update method with
+            list
+        """
+        x = "width must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Rectangle(1, 1)
+            t.update(5, None)
+        self.assertEqual(x, str(cm.exception))
+
+    def test_update_x_boolean_error_msg_args_instance(self):
+        """
+            Test update method with
+            list
+        """
+        x = "x must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Rectangle(1, 1)
+            t.update(5, 5, 5, True)
+        self.assertEqual(x, str(cm.exception))
+
+    def test_update_x_tuple_error_msg_args_instance(self):
+        """
+            Test update method with
+            list
+        """
+        x = "x must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Rectangle(1, 1)
+            t.update(5, 2, 2, (5, 4))
+        self.assertEqual(x, str(cm.exception))
+
+    def test_update_x_float_error_msg_args_instance(self):
+        """
+            Test update method with
+            list
+        """
+        x = "x must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Rectangle(1, 1)
+            t.update(5, 6, 6, 6.5)
+        self.assertEqual(x, str(cm.exception))
+
+    def test_update_x_None_error_msg_args_instance(self):
+        """
+            Test update method with
+            list
+        """
+        x = "x must be an integer"
+        with self.assertRaises(TypeError) as cm:
+            t = Rectangle(1, 1)
+            t.update(5, 2, 2, None)
         self.assertEqual(x, str(cm.exception))
 
     def test_update_y_error_msg_args_instance(self):
@@ -390,6 +748,27 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             r = Rectangle([1], 2)
 
+    def test_list_width_tuple_setter(self):
+        """
+            Test exception with setter other than int
+        """
+        with self.assertRaises(TypeError):
+            r = Rectangle((0, 1), 2)
+
+    def test_list_width_boolean_setter(self):
+        """
+            Test exception with setter other than int
+        """
+        with self.assertRaises(TypeError):
+            r = Rectangle(True, 2)
+
+    def test_list_width_float_setter(self):
+        """
+            Test exception with setter other than int
+        """
+        with self.assertRaises(TypeError):
+            r = Rectangle(3.5, 2)
+
     def test_string_width_setter(self):
         """
             Test exception with setter other than int
@@ -416,6 +795,27 @@ class TestRectangle(unittest.TestCase):
           Height param tests cases
         *****************************
     """
+
+    def test_list_height_tuple_setter(self):
+        """
+            Test exception with setter other than int
+        """
+        with self.assertRaises(TypeError):
+            r = Rectangle(5, (2, 5))
+
+    def test_list_height_boolean_setter(self):
+        """
+            Test exception with setter other than int
+        """
+        with self.assertRaises(TypeError):
+            r = Rectangle(2, True)
+
+    def test_list_height_float_setter(self):
+        """
+            Test exception with setter other than int
+        """
+        with self.assertRaises(TypeError):
+            r = Rectangle(2, 2.7)
 
     def test_height_getter(self):
         """
@@ -472,6 +872,27 @@ class TestRectangle(unittest.TestCase):
           X param tests cases
         *****************************
     """
+
+    def test_list_x_tuple_setter(self):
+        """
+            Test exception with setter other than int
+        """
+        with self.assertRaises(TypeError):
+            r = Rectangle(5, 2, (2, 3))
+
+    def test_list_x_boolean_setter(self):
+        """
+            Test exception with setter other than int
+        """
+        with self.assertRaises(TypeError):
+            r = Rectangle(5, 2, True)
+
+    def test_list_x_float_setter(self):
+        """
+            Test exception with setter other than int
+        """
+        with self.assertRaises(TypeError):
+            r = Rectangle(7, 2, 5.5)
 
     def test_x_getter(self):
         """
@@ -535,6 +956,27 @@ class TestRectangle(unittest.TestCase):
           Y param tests cases
         *****************************
     """
+
+    def test_list_y_tuple_setter(self):
+        """
+            Test exception with setter other than int
+        """
+        with self.assertRaises(TypeError):
+            r = Rectangle(5, 2, 2, (0, 1))
+
+    def test_list_y_boolean_setter(self):
+        """
+            Test exception with setter other than int
+        """
+        with self.assertRaises(TypeError):
+            r = Rectangle(5, 2, 5, True)
+
+    def test_list_y_float_setter(self):
+        """
+            Test exception with setter other than int
+        """
+        with self.assertRaises(TypeError):
+            r = Rectangle(7, 2, 2, 5.5)
 
     def test_y_getter(self):
         """

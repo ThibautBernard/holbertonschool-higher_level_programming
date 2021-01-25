@@ -31,6 +31,27 @@ class TestRectangle(unittest.TestCase):
             t = Rectangle(0, 2)
         self.assertEqual(w, str(cm.exception))
 
+    def test_instance_not_enough_much_arg_exeception_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "__init__() missing 1 required positional argument: 'height'"
+        with self.assertRaises(TypeError) as cm:
+            r3 = Rectangle(10)
+            print(r3.id)
+        self.assertEqual(w, str(cm.exception))
+
+    def test_instance_To_much_arg_exeception_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "__init__() takes from 3 to 6 "\
+            "positional arguments but 8 were given"
+        with self.assertRaises(TypeError) as cm:
+            r3 = Rectangle(10, 2, 0, 0, 12, 15, 8)
+            print(r3.id)
+        self.assertEqual(w, str(cm.exception))
+
     def test_instance_Width_Value_negative_error_msg(self):
         """
             Test error message instance value
@@ -291,16 +312,6 @@ class TestRectangle(unittest.TestCase):
         t = Rectangle(1, 1)
         t.update(25)
         x = "[Rectangle] (25) 0/0 - 1/1"
-        self.assertEqual(x, str(t))
-
-    def test_update_ID_None_args_instance(self):
-        """
-            Test update method with
-            id
-        """
-        t = Rectangle(1, 1)
-        t.update(None)
-        x = "[Rectangle] (2) 0/0 - 1/1"
         self.assertEqual(x, str(t))
 
     def test_update_width_args_instance(self):

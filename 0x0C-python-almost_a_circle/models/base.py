@@ -6,6 +6,7 @@ Id counter
 import json
 import os.path
 from os import path
+import csv
 
 
 class Base:
@@ -26,8 +27,8 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """write json representation to a file"""
-        if list_objs is None:
-            with open("Base.json", "a") as file:
+        if list_objs is None or len(list_objs) == 0:
+            with open("{}.json".format(cls.__name__), "a") as file:
                     file.write("[]")
         else:
             a = []
@@ -82,3 +83,39 @@ class Base:
             return list_instance
         else:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Serialize list of object into csv """
+        with open("{}.csv".format(cls.__name__), 'a') as file:
+            if cls.__name__ == "Rectangle":
+                a = []
+                for i in list_objs:
+                    a.extend([i.id, i.width, i.height, i.x, i.y])
+                    writer = csv.writer(file, delimiter=',')
+                    writer.writerow([i.id, i.width, i.height, i.x, i.y])
+                    a.clear()
+            if cls.__name__ == "Square":
+                a = []
+                for i in list_objs:
+                    a.extend([i.id, i.size, i.x, i.y])
+                    writer = csv.writer(file, delimiter=',')
+                    writer.writerow(a)
+                    a.clear()
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Deserialize csv to object"""
+        exist_class = ["Rectangle", "Square"]
+        if cls.__name__ in exist_class:
+            with open("{}.csv".format(cls.__name__), 'r') as file:
+                content_f = csv.reader(file)
+                arr_object = []
+                for i in content_f:
+                    instance = cls(1, 1)
+                    tmp = []
+                    for y in i:
+                        tmp.append(int(y))
+                    instance.update(*tmp)
+                    arr_object.append(instance)
+            return arr_object

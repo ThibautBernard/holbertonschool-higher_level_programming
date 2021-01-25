@@ -147,8 +147,8 @@ class TestBase(unittest.TestCase):
             Test savetofile method if empty arg
         """
         r = Rectangle(1, 1)
-        Rectangle.save_to_file(None)
-        self.assertTrue(path.exists("Base.json"))
+        Rectangle.save_to_file([])
+        self.assertTrue(path.exists("Rectangle.json"))
 
     def test_save_to_file_rectangle_arg_instance(self):
         """

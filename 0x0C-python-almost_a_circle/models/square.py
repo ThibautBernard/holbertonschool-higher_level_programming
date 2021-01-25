@@ -32,17 +32,10 @@ class Square(Rectangle):
                     break
                 tmp = order.index(i)
                 t = attrib[tmp]
-                if t is not "id":
-                    setattr(self, t, args[i])
-                elif t is "id":
-                    if args[i] is None:
-                        Base._Base__nb_objects += 1
-                        self.id = Base._Base__nb_objects
-                    else:
-                        setattr(self, t, args[i])
+                setattr(self, t, args[i])
         else:
             for key, value in kwargs.items():
-                if key is not "id":
+                if key is not "id" and key in attrib:
                     setattr(self, key, value)
                 elif key is "id":
                     if value is None:

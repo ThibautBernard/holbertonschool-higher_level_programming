@@ -20,6 +20,27 @@ class TestSquare(unittest.TestCase):
           Instance object counter tests cases
         *****************************
     """
+    def test_instance_not_enough_much_arg_exeception_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "__init__() missing 1 required positional argument: 'size'"
+        with self.assertRaises(TypeError) as cm:
+            r3 = Square()
+            print(r3.id)
+        self.assertEqual(w, str(cm.exception))
+
+    def test_instance_To_much_arg_exeception_error_msg(self):
+        """
+            Test error message instance value
+        """
+        w = "__init__() takes from 2 to 5 "\
+            "positional arguments but 8 were given"
+        with self.assertRaises(TypeError) as cm:
+            r3 = Square(10, 2, 0, 0, 12, 15, 8)
+            print(r3.id)
+        self.assertEqual(w, str(cm.exception))
+
     def test_instance_Width_Value_Zero_error_msg(self):
         """
             Test error message instance value

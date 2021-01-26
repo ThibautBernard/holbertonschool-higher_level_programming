@@ -62,7 +62,10 @@ class Base:
     def create(cls, **dictionary):
         """Returns an instance with all attributes from dictionary"""
         if type(dictionary) is dict and dictionary is not None:
-            r = cls(1, 1)
+            if cls.__name__ == "Rectangle":
+                r = cls(1, 1)
+            elif cls.__name__ == "Square":
+                r = cls(1)
             r.update(**dictionary)
             return r
 

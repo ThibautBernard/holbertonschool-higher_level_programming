@@ -440,7 +440,7 @@ class TestBase(unittest.TestCase):
         Square.save_to_file([s1])
         new = Square.load_from_file()
         s = "[Square] (20) 0/0 - 5"
-        self.assertEqual(s, str(new[1]))
+        self.assertEqual(s, str(new[0]))
 
     def test_load_from_file_Square_File_Not_exist_return_instance(self):
         """

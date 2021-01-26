@@ -35,9 +35,9 @@ class Base:
             for i in list_objs:
                 a.append(i.to_dictionary())
 
-            with open("{}.json".format(type(i).__name__), "a") as file:
+            with open("{}.json".format(type(i).__name__), "w") as file:
                 s = Base.to_json_string(a)
-                file.write(s + "\n")
+                file.write(s)
 
     @staticmethod
     def to_json_string(list_dictionaries):

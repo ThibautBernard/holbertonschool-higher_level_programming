@@ -61,7 +61,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """Returns an instance with all attributes from dictionary"""
-        if type(dictionary) is dict:
+        if type(dictionary) is dict and dictionary is not None:
             r = cls(1, 1)
             r.update(**dictionary)
             return r

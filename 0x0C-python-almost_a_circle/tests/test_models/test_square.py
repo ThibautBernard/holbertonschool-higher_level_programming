@@ -691,3 +691,6 @@ class TestSquare(unittest.TestCase):
         """
         r = Square(5, 5, 0)
         self.assertEqual(0, r.y)
+
+if __name__ == "__main__":
+    unittest.main()

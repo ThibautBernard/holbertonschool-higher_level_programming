@@ -451,3 +451,6 @@ class TestBase(unittest.TestCase):
         l = len(new)
         self.assertTrue(type(new) is list)
         self.assertEqual(0, l)
+
+if __name__ == "__main__":
+    unittest.main()

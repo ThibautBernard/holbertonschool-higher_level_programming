@@ -8,3 +8,8 @@
 * [Exceptions](https://github.com/ThibautBernard/holbertonschool-higher_level_programming/tree/main/0x05-python-exceptions)
 * [Classes](https://github.com/ThibautBernard/holbertonschool-higher_level_programming/tree/main/0x06-python-classes)
 * [TDD](https://github.com/ThibautBernard/holbertonschool-higher_level_programming/tree/main/0x07-python-test_driven_development)
+* [More Classes](https://github.com/ThibautBernard/holbertonschool-higher_level_programming/tree/main/0x08-python-more_classes)
+* [Everything is object](https://github.com/ThibautBernard/holbertonschool-higher_level_programming/tree/main/0x09-python-everything_is_object)
+* [Inheritance](https://github.com/ThibautBernard/holbertonschool-higher_level_programming/tree/main/0x0A-python-inheritance)
+* [Input-Output](https://github.com/ThibautBernard/holbertonschool-higher_level_programming/tree/main/0x0B-python-input_output)
+* [Project Almost a circle](https://github.com/ThibautBernard/holbertonschool-higher_level_programming/tree/main/0x0C-python-almost_a_circle)

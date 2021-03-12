@@ -1,5 +1,5 @@
 # Higher Level Programming (Python, Datastructure..)
-## Here below you can click on what project i did and see more about this project ! Don't hesitate to :)
+## List of notions seen 
 * [Everything about Python](https://github.com/ThibautBernard/holbertonschool-higher_level_programming/tree/main/0x00-python-hello_world)
 * [Condition, loop, functions..](https://github.com/ThibautBernard/holbertonschool-higher_level_programming/tree/main/0x01-python-if_else_loops_functions)
 * [Import, Modules..](https://github.com/ThibautBernard/holbertonschool-higher_level_programming/tree/main/0x02-python-import_modules)

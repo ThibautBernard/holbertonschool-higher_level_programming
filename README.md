@@ -13,3 +13,5 @@
 * [Inheritance](https://github.com/ThibautBernard/holbertonschool-higher_level_programming/tree/main/0x0A-python-inheritance)
 * [Input-Output](https://github.com/ThibautBernard/holbertonschool-higher_level_programming/tree/main/0x0B-python-input_output)
 * [Project Almost a circle](https://github.com/ThibautBernard/holbertonschool-higher_level_programming/tree/main/0x0C-python-almost_a_circle)
+* [Sql - Intro](https://github.com/ThibautBernard/holbertonschool-higher_level_programming/tree/main/0x0D-SQL_introduction)
+* [Sql - Advanced](https://github.com/ThibautBernard/holbertonschool-higher_level_programming/tree/main/0x0E-SQL_more_queries)

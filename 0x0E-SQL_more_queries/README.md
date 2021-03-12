@@ -20,5 +20,4 @@
 
 
 ## My new article 
-* How Do SQL Database Engines Work?
-[How SQL Database Engines Works (RDBMS)?](https://2533.medium.com/how-sql-database-engines-works-rdbms-d683a8b56ec1)
+* [How SQL Database Engines Works (RDBMS)?](https://2533.medium.com/how-sql-database-engines-works-rdbms-d683a8b56ec1)

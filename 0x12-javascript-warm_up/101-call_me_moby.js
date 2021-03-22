@@ -1,9 +1,8 @@
 #!/usr/bin/node
-
-module.exports = function callMeMoby (x, MyFunc) {
+exports.callMeMoby = function (x, MyFunc) {
   let i = 0;
   while (i < x) {
-    callMeMoby();
+    MyFunc();
     i++;
   }
 };

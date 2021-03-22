@@ -32,6 +32,9 @@ if (nbArgs === 2) {
 } else if (nbArgs === 3) {
   console.log(0);
 } else {
-  quick(process.argv, 0, nbArgs - 1);
-  console.log(process.argv[nbArgs - 2]);
+  const newArray = process.argv.slice(2, nbArgs);
+  const length = newArray.length;
+  const aToInt = newArray.map(i => Number(i));
+  quick(aToInt, 0, length - 1);
+  console.log(aToInt[length - 2]);
 }

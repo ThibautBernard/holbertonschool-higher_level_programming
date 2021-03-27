@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+    orm
+"""
 import sys
 import MySQLdb
 from model_state import Base, State
@@ -11,4 +14,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     state = session.query(State).first()
-    print("{:d}: {}".format(state.id, state.name))
+    if not state:
+        print("Nothing")
+    else:
+        print("{:d}: {}".format(state.id, state.name))

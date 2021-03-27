@@ -12,7 +12,8 @@ if __name__ == "__main__":
     search_n = sys.argv[4]
     db = MySQLdb.connect(host=h, port=3306, user=u_name, passwd=p, db=db_name)
     cur = db.cursor()
-    numrows = cur.execute("SELECT * FROM states WHERE name='%s'" % search_n)
+    s = "SELECT * FROM states WHERE name='{}'".format(search_n)
+    numrows = cur.execute(s)
     rows = cur.fetchall()
     for row in rows:
         print(row)

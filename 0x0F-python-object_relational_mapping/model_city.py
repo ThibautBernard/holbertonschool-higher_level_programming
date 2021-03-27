@@ -12,6 +12,7 @@ Base = declarative_base()
 
 
 class City(Base):
+    """Map citi"""
     __tablename__ = 'cities'
     id = Column(Integer, primary_key=True, nullable=False)
     name = Column(String(128), nullable=False)

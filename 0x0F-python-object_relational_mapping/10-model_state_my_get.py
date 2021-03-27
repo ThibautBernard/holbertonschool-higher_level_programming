@@ -16,6 +16,6 @@ if __name__ == "__main__":
     state = session.query(State).filter_by(name=sys.argv[4]).all()
     if state:
         for i in state:
-            print("{:d}: {}".format(i.id, i.name))
+            print("{:d}".format(i.id))
     else:
         print("Not found")

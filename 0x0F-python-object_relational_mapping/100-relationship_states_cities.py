@@ -6,7 +6,7 @@
 import sys
 import MySQLdb
 from relationship_state import Base, State
-from relationship_city import Base, City
+from relationship_city import City
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import *

@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-    create a new city with a new state object relation
-    and flush && commit to database
+    select all states and display each cities from this
+    state
 """
 import sys
 import MySQLdb

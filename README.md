@@ -15,3 +15,6 @@
 * [Project Almost a circle](https://github.com/ThibautBernard/holbertonschool-higher_level_programming/tree/main/0x0C-python-almost_a_circle)
 * [Sql - Intro](https://github.com/ThibautBernard/holbertonschool-higher_level_programming/tree/main/0x0D-SQL_introduction)
 * [Sql - Advanced](https://github.com/ThibautBernard/holbertonschool-higher_level_programming/tree/main/0x0E-SQL_more_queries)
+* [ORM](https://github.com/ThibautBernard/holbertonschool-higher_level_programming/blob/main/0x0F-python-object_relational_mapping)
+* [Javascript (Scripting) - Introduction](https://github.com/ThibautBernard/holbertonschool-higher_level_programming/tree/main/0x12-javascript-warm_up)
+* [Javascript (Scripting) - Objects & Closures](https://github.com/ThibautBernard/holbertonschool-higher_level_programming/tree/main/0x13-javascript_objects_scopes_closures)

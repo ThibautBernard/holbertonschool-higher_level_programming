@@ -1,4 +1,4 @@
-# Higher Level Programming (Python, Datastructure..)
+# Higher Level Programming (Python, Datastructure...)
 ## List of notions seen 
 * [Everything about Python](https://github.com/ThibautBernard/holbertonschool-higher_level_programming/tree/main/0x00-python-hello_world)
 * [Condition, loop, functions..](https://github.com/ThibautBernard/holbertonschool-higher_level_programming/tree/main/0x01-python-if_else_loops_functions)

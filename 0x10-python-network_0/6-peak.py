@@ -6,28 +6,10 @@
 
 def find_peak(list_of_integers):
     """
-        Divide and conquer method
-        split the array and subarray in two at each recursion
-        return the peak if the peak is greather than his
-        neighbors
+        sort the array and return the last element
+        O(n log(n))
     """
     if not list_of_integers:
         return None
-    l = len(list_of_integers) - 1
-    if l == 0 or l == -1:
-        return None
-    if l == 1:
-        return list_of_integers[0]
-    if l == 2:
-        if list_of_integers[1] > list_of_integers[0]:
-            return list_of_integers[1]
-        else:
-            return list_of_integers[0]
-    mid = round(l / 2)
-    peak = list_of_integers[mid]
-    if peak > list_of_integers[mid - 1] and peak > list_of_integers[mid + 1]:
-        return peak
-    elif list_of_integers[mid - 1] < peak:
-        return find_peak(list_of_integers[mid:])
-    else:
-        return find_peak(list_of_integers[:mid])
+    list_of_integers.sort()
+    return list_of_integers[-1]

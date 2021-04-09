@@ -5,9 +5,10 @@
 from urllib import request, parse, error
 
 import sys
-try:
-    with request.urlopen(sys.argv[1]) as response:
+if __name__ == "__main__":
+    try:
+        with request.urlopen(sys.argv[1]) as response:
             html = response.read()
-    print(html.decode('utf8'))
-except error.HTTPError as err:
-    print("Error code: {}".format(err.code))
+        print(html.decode('utf8'))
+    except error.HTTPError as err:
+        print("Error code: {}".format(err.code))

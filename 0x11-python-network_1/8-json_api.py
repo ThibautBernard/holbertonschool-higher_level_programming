@@ -14,6 +14,7 @@ if __name__ == "__main__":
         if len(r.json()) == 0:
             print('No result')
         else:
-            print("[{:d}] {}".format(r.json()['id'], r.json()['name']))
+            if 'id' and 'name' in r.json():
+                print("[{:d}] {}".format(r.json()['id'], r.json()['name']))
     else:
         print('Not a valid JSON')

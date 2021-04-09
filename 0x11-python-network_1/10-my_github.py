@@ -7,7 +7,7 @@ import sys
 if __name__ == "__main__":
     if len(sys.argv) == 3:
         h = {'Accept': 'application/vnd.github.v3+json'}
-        u = "https://api.github.com/users/{}".format(sys.argv[1])
+        u = "https://api.github.com/user"
         r = requests.get(u, auth=(sys.argv[1], sys.argv[2]), headers=h)
         if 'id' in r.json():
             print(r.json()['id'])

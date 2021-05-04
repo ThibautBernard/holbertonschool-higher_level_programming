@@ -16,7 +16,7 @@ request(options, function (err, res, body) {
   let counter = 0;
   for (const k of json.results) {
     for (const url of k.characters) {
-      if (url === 'https://swapi-api.hbtn.io/api/people/18/') {
+      if (url.includes('18')) {
         counter += 1;
       }
     }

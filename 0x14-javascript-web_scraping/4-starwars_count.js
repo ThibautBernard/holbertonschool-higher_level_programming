@@ -24,18 +24,19 @@ const options = {
 request(options, function (err, res, body) {
   const json = JSON.parse(body);
   const arr = [];
-  for (const k of json.results) {
-    /**
-      filter, compare each value of the array and return array
-      filled if the comparaison is true
-    **/
-    const tmp = k.characters.filter(compare);
-    if (tmp.length > 0) {
-      arr.push(tmp);
-    }
-  }
-  console.log(arr.length);
   if (err) {
-    // pass;
+    console.log(err);
+  } else {
+    for (const k of json.results) {
+      /**
+        filter, compare each value of the array and return array
+        filled if the comparaison is true
+      **/
+      const tmp = k.characters.filter(compare);
+      if (tmp.length > 0) {
+        arr.push(tmp);
+      }
+    }
+    console.log(arr.length);
   }
 });

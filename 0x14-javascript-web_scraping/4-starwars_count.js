@@ -5,16 +5,6 @@
   process.argv[2] = the path of the url
 **/
 
-/**
-  compare for each iteration of filter
-  each element of the array
-  value: element of the array
- **/
-function compare (value) {
-  if (value === 'https://swapi-api.hbtn.io/api/people/18/') {
-    return (value);
-  }
-}
 const request = require('request');
 const options = {
   url: process.argv[2],
@@ -23,20 +13,16 @@ const options = {
 
 request(options, function (err, res, body) {
   const json = JSON.parse(body);
-  const arr = [];
-  if (err) {
-    console.log(err);
-  } else {
-    for (const k of json.results) {
-      /**
-        filter, compare each value of the array and return array
-        filled if the comparaison is true
-      **/
-      const tmp = k.characters.filter(compare);
-      if (tmp.length > 0) {
-        arr.push(tmp);
+  let counter = 0;
+  for (const k of json.results) {
+    for (const url of k.characters) {
+      if (url === 'https://swapi-api.hbtn.io/api/people/18/') {
+        counter += 1;
       }
     }
-    console.log(arr.length);
+  }
+  console.log(counter);
+  if (err) {
+    // pass;
   }
 });

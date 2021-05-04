@@ -12,7 +12,7 @@ const options = {
   method: 'GET'
 };
 
-function test (url) {
+function getNameCharacter (url) {
   return new Promise((resolve, reject) => {
     request(url, function (err, res, body) {
       if (err) {
@@ -26,13 +26,13 @@ function test (url) {
 
 request(options, function (err, res, body) {
   const json = JSON.parse(body);
-  async function t () {
+  async function getCharacters () {
     for (const character of json.characters) {
-      const name = await test(character);
+      const name = await getNameCharacter(character);
       console.log(name);
     }
   }
-  t();
+  getCharacters();
   if (err) {
     // pass;
   }
